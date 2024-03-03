@@ -11,7 +11,7 @@ Nodes
 # Node Class
 class Node:
     # Initialize Node
-    def __init__(self, data):
+    def __init__(self, data=0):
         self.data = data
         self.next = None
 
@@ -123,7 +123,10 @@ class LinkedList:
     def print_ll(self):
         current_node = self.head
         while current_node:
-            print(current_node.data)
+            if current_node.next is None:
+                print(current_node.data)
+            else:
+                print(current_node.data + "->", end="")
             current_node = current_node.next
 
     # Get Length of LinkedList
@@ -138,8 +141,28 @@ class LinkedList:
         else:
             return 0
 
+    # Reverse LinkedList
+    # 1 -> 2 -> 3 -> 4 -> 5 to 1 <- 2 <- 3 <- 4 <- 5
+    def reverse_ll(self):
+        if self.head is None:
+            return
+        current_node = self.head
+        if current_node.next is None:
+            return
+        prev = None
+        while current_node.next is not None:
+            temp = current_node.next
+            current_node.next = prev
+            prev = current_node
+            current_node = temp
+        current_node.next = prev
+        self.head = current_node
+
 
 my_linked_list = LinkedList()
-my_linked_list.insert_at_end("b")
+my_linked_list.insert_at_end("c")
+my_linked_list.insert_at_beginning("b")
 my_linked_list.insert_at_beginning("a")
+my_linked_list.print_ll()
+my_linked_list.reverse_ll()
 my_linked_list.print_ll()
