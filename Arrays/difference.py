@@ -24,14 +24,14 @@ Every integer in nums2 is present in nums1. Therefore, answer[1] = [].
 """
 
 
-"""
-Time complexity: O(n)
-Space complexity: O(n)
-"""
-
-
 class Solution:
     def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
         set1, set2 = set(nums1), set(nums2)
         answer = [list(set1 - set2), list(set2 - set1)]
         return answer
+
+
+"""
+Time complexity: O(n)
+Space complexity: O(n)
+"""
