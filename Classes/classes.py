@@ -26,8 +26,13 @@ class Student:
     school = "Howard University"  # Class Attribute
 
     # Constructor
-    def __init__(self, name):
-        self.name = name  # Instance Attribute
+    def __init__(
+        self,
+        name,
+        student_id,
+    ):
+        self.full_name = name  # Instance Attribute
+        self.id = student_id
 
     def __str__(self):
         """
@@ -52,17 +57,22 @@ class Student:
 
 
 # Object
-danielle = Student("Danielle McIntosh")
+danielle = Student("Danielle McIntosh", 0)
+riana = Student("Riana Battick", 1)
 
-print(type(danielle))
-print(isinstance(danielle, Student))
 
-danielle.print_student_details()
+print(riana.id)
 
-print(Student.school)
-print(danielle.school)
 
-new_student = Student.new_student()
-print(new_student.school)
+# print(type(danielle))
+# print(isinstance(danielle, Student))
 
-print(danielle.__str__())
+# danielle.print_student_details()
+
+# print(Student.school)
+# print(danielle.school)
+
+# new_student = Student.new_student()
+# print(new_student.school)
+
+# print(danielle.__str__())
