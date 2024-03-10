@@ -18,6 +18,7 @@ Stack Functions:
         Time Complexity: O(1)
 """
 
+
 # Stack Implementation using a List
 # append(), pop()
 
@@ -63,3 +64,25 @@ print(stack.pop())
 print(stack)
 
 print()
+
+
+class MyQueue:
+    def __init__(self):
+        self.stackPush = []
+        self.stackPop = []
+
+    def push(self, x):
+        self.stackPush.append(x)
+
+    def pop(self):
+        self.peek()
+        return self.stackPop.pop()
+
+    def peek(self):
+        if not self.stackPop:
+            while self.stackPush:
+                self.stackPop.append(self.stackPush.pop())
+        return self.stackPop[-1]
+
+    def empty(self):
+        return not self.stackPush and not self.stackPop
