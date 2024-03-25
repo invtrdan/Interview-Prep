@@ -5,10 +5,24 @@ Hash Table
     
     Key     ->     Hash Function     ->     Index, Value
     
+    address = key % m
+    where n is the number of available addresses
+    
 Separate Chaining
     - A technique used to handle collisions in a hash table.
     - When 2 ore more keys map to the same index in the array, we store them in a LinkedList at tat index.
     - This allows us to be able to store multiple values at the same index and still be able to retrieve them using their key.
+"""
+
+"""
+Collisions
+    Open Addressing can use a variety of techniques to decide where to place an item that doesn't go were it should.
+        - Linear Probing: if the calculated address is occupied, then a linear search is used to find the next available slot.
+        
+    Load Factor = Total # of items stored / size of the array
+    
+Chaining (Closed Addressing)
+    LinkedList
 """
 
 """
